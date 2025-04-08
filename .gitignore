@@ -1,0 +1,14 @@
+# Ignore compiled files
+*.rpyc
+*.rpa
+
+# Logs and saves
+*.log
+*.save
+persistent
+
+# Python cache
+__pycache__/
+
+# Mac system files
+.DS_Store
