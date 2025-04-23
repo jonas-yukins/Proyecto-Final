@@ -1,4 +1,14 @@
-﻿# This is where we initialize the map and define the checkpoints for Soledad's journey.
+﻿image bus = "Bus.png"
+image desert4 = "Desert_4People.png"
+image desert20 = "Desert_20People.png"
+image stepfather = "Drunk_Stepfather.png"
+image gangsters = "Gangsters.png"
+image hiding = "Hiding_in_Van.png"
+image father = "Speaking_to_Father.png"
+image van = "Van.png"
+image xray = "Xray_Van.png"
+
+# This is where we initialize the map and define the checkpoints for Soledad's journey.
 
 init python:
     # Define the checkpoints and their locations on the map
@@ -12,7 +22,7 @@ init python:
 # Screen for showing the map with clickable checkpoints
 screen soledad_map():
     tag map
-    add "map_placeholder.png"  # Replace with the name of your map image (e.g., map_placeholder.jpg)
+    add "Watercolor Map of the Americas.png"  # Replace with the name of your map image (e.g., map_placeholder.jpg)
 
     # Loop through each checkpoint and create a clickable button for it
     for cp in soledad_journey:
@@ -36,21 +46,28 @@ label start:
 
 # Checkpoint 1: Honduras
 label soledad_cp1:
-    scene bg_checkpoint_1  # Placeholder image for Checkpoint 1 (replace with actual image)
+    scene stepfather  # First image
     with dissolve
     "This is Checkpoint 1: Soledad’s first stop in Honduras."
-    menu:
-        "Back to map":
-            jump show_soledad_map
+
+    scene father  # Second image
+    with dissolve
+    "She spent the night at a crowded shelter before continuing her journey."
+
+    jump show_soledad_map
+
 
 # Checkpoint 2: Guatemala
 label soledad_cp2:
-    scene bg_checkpoint_2  # Placeholder image for Checkpoint 2 (replace with actual image)
+    scene bus  # Placeholder image for Checkpoint 2 (replace with actual image)
     with dissolve
     "This is Checkpoint 2: Soledad's journey in Guatemala."
-    menu:
-        "Back to map":
-            jump show_soledad_map
+
+    scene gangsters
+    with dissolve
+    "Gangsters on board"
+
+    jump show_soledad_map
 
 # Checkpoint 3: Mexico Desert
 label soledad_cp3:
