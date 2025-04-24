@@ -48,11 +48,16 @@ label start:
 label soledad_cp1:
     scene stepfather  # First image
     with dissolve
-    "This is Checkpoint 1: Soledad’s first stop in Honduras."
+    "Soledad Castillo was born in Honduras in 1992."
+    "Her father left for the U.S. when she was 5."
+    "She lived with her mother and sister. They were the poorest in a poor neighborhood."
+    "Her stepfather was abusive and a drunk."
+    "\"He used to hit my mom and throw chairs at her.\""
 
     scene father  # Second image
     with dissolve
-    "She spent the night at a crowded shelter before continuing her journey."
+    "When she was 12 her father came to visit her. She told him she wanted to go to the U.S. with him."
+    "\"I asked him to take me back to the United States because I didn’t have anything left in Honduras and I wanted to start a new life.\""
 
     jump show_soledad_map
 
@@ -61,11 +66,14 @@ label soledad_cp1:
 label soledad_cp2:
     scene bus  # Placeholder image for Checkpoint 2 (replace with actual image)
     with dissolve
-    "This is Checkpoint 2: Soledad's journey in Guatemala."
+    "They first traveled from Honduras to Guatemala on a bus."
 
     scene gangsters
     with dissolve
-    "Gangsters on board"
+    "\"There were gangsters on board who put a gun to my head, asking for all my money.\""
+    "\"I didn’t have any but they didn’t believe me.\""
+    "\"They took my pants off. I don’t remember their faces. I just remember their hands.\""
+    "\"I was 14.\""
 
     jump show_soledad_map
 
