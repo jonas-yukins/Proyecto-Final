@@ -1,41 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 88, in script
-    "\"We had to lie down with many people, one on top of the other. The coyotes [smugglers] put cardboard on top of us so la Migra [the authorities] wouldn’t see us if they pulled us over.\""
-NameError: name 'smugglers' is not defined
+  File "game/script.rpy", line 43, in script
+    call screen soledad_map
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/script.rpy", line 27, in execute
+    screen soledad_map():
+  File "game/script.rpy", line 27, in execute
+    screen soledad_map():
+  File "game/script.rpy", line 29, in execute
+    add map at fit_screen # Replace with the name of your map image
+Exception: Not a displayable: <class 'map'>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 88, in script
-    "\"We had to lie down with many people, one on top of the other. The coyotes [smugglers] put cardboard on top of us so la Migra [the authorities] wouldn’t see us if they pulled us over.\""
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/ast.py", line 2586, in execute
-    Say.execute(self)
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/exports/sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/character.py", line 1456, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/character.py", line 1369, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/character.py", line 1349, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/substitutions.py", line 86, in interpolate
-    raise e
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-NameError: name 'smugglers' is not defined
+  File "game/script.rpy", line 43, in script
+    call screen soledad_map
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/ast.py", line 1987, in execute
+    self.call("execute")
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/exports/statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/screen.py", line 480, in visit_all
+    callback(self)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/screen.py", line 491, in per_interact
+    self.update()
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/display/screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 27, in execute
+    screen soledad_map():
+  File "game/script.rpy", line 27, in execute
+    screen soledad_map():
+  File "game/script.rpy", line 29, in execute
+    add map at fit_screen # Replace with the name of your map image
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/sl2/sldisplayables.py", line 453, in sl2add
+    d = renpy.easy.displayable(d, scope=scope)
+  File "/Users/jonas/Code/Ren'Py/Ren'Py SDK/renpy/easy.py", line 145, in displayable
+    raise Exception("Not a displayable: %r" % (d,))
+Exception: Not a displayable: <class 'map'>
 
 macOS-15.1.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 Proyecto Final 1.0
-Fri Apr 25 12:15:47 2025
+Fri Apr 25 13:19:24 2025

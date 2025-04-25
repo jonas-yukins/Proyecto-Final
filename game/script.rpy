@@ -7,6 +7,7 @@ image hiding = "Hiding_in_Van.png"
 image father = "Speaking_to_Father.png"
 image van = "Van.png"
 image xray = "Xray_Van.png"
+image map = "Watercolor Map of the Americas.png"
 
 transform fit_screen:
     xysize (1920, 1080)
@@ -16,16 +17,16 @@ transform fit_screen:
 init python:
     # Define the checkpoints and their locations on the map
     soledad_journey = [
-        {"name": "Checkpoint 1", "label": "soledad_cp1", "coords": (300, 550)},
-        {"name": "Checkpoint 2", "label": "soledad_cp2", "coords": (320, 500)},
-        {"name": "Checkpoint 3", "label": "soledad_cp3", "coords": (340, 420)},
-        {"name": "Checkpoint 4", "label": "soledad_cp4", "coords": (100, 300)},
+        {"name": "Honduras", "label": "soledad_cp1", "coords": (650, 550)},
+        {"name": "Guatemala", "label": "soledad_cp2", "coords": (600, 500)},
+        {"name": "Mexico", "label": "soledad_cp3", "coords": (440, 420)},
+        {"name": "Texas", "label": "soledad_cp4", "coords": (400, 300)},
     ]
 
 # Screen for showing the map with clickable checkpoints
 screen soledad_map():
     tag map
-    add "Watercolor Map of the Americas.png" at fit_screen # Replace with the name of your map image
+    add "map" at fit_screen
 
     # Loop through each checkpoint and create a clickable button for it
     for cp in soledad_journey:
@@ -48,6 +49,7 @@ label character_select_hub:
 
 screen character_select():
     tag menu
+    add "map" at fit_screen 
     frame:
         align (0.5, 0.5)
         padding (40, 40)
