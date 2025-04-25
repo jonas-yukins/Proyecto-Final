@@ -42,8 +42,45 @@ label show_soledad_map:
     call screen soledad_map
     return
 
+label character_select_hub:
+    call screen character_select
+    return
+
+screen character_select():
+    tag menu
+    frame:
+        align (0.5, 0.5)
+        padding (40, 40)
+        background "#000a"
+        vbox:
+            spacing 20
+            text "Choose a story to begin:" size 40
+
+            textbutton "Soledad Castillo":
+                action Jump("start_soledad")
+
+            textbutton "Aguilar Ortega Family":
+                action Jump("start_aguilar_ortega")
+
+            textbutton "Liset Barrios & Marta Amaro":
+                action Jump("start_liset_marta")
+
 # Start of the game
 label start:
+    call screen character_select
+    return
+
+label start_aguilar_ortega:
+    "This will be the journey of the Aguilar Ortega family."
+    # Add map and checkpoints here later
+    return
+
+label start_liset_marta:
+    "This will be the journey of Liset Barrios & Marta Amaro."
+    # Add map and checkpoints here later
+    return
+
+label start_soledad:
 
     "Welcome to Soledad's journey. Let’s begin the trip."
     jump show_soledad_map
@@ -109,4 +146,9 @@ label soledad_cp4:
     "Upon reaching Texas they were put in a van to drive to California."
     "\"There was a hiding place under the floor where they put us. It was a very long trip and we had to stay quiet the whole time.\""
     
-    jump show_soledad_map
+    "You have finished Soledad Castillo's Journey."
+
+    scene black with fade
+    pause 1.0
+
+    jump start
