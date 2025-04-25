@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 28: is not terminated with a newline. (Check strings and parenthesis.)
+        ortega_journey = [
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Fri Apr 25 14:08:44 2025
