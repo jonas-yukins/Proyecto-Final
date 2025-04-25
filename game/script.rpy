@@ -8,6 +8,9 @@ image father = "Speaking_to_Father.png"
 image van = "Van.png"
 image xray = "Xray_Van.png"
 
+transform fit_screen:
+    xysize (1920, 1080)
+
 # This is where we initialize the map and define the checkpoints for Soledad's journey.
 
 init python:
@@ -22,7 +25,7 @@ init python:
 # Screen for showing the map with clickable checkpoints
 screen soledad_map():
     tag map
-    add "Watercolor Map of the Americas.png"  # Replace with the name of your map image (e.g., map_placeholder.jpg)
+    add "Watercolor Map of the Americas.png" at fit_screen # Replace with the name of your map image
 
     # Loop through each checkpoint and create a clickable button for it
     for cp in soledad_journey:
@@ -41,12 +44,13 @@ label show_soledad_map:
 
 # Start of the game
 label start:
+
     "Welcome to Soledad's journey. Let’s begin the trip."
     jump show_soledad_map
 
 # Checkpoint 1: Honduras
 label soledad_cp1:
-    scene stepfather  # First image
+    scene stepfather at fit_screen
     with dissolve
     "Soledad Castillo was born in Honduras in 1992."
     "Her father left for the U.S. when she was 5."
@@ -54,21 +58,20 @@ label soledad_cp1:
     "Her stepfather was abusive and a drunk."
     "\"He used to hit my mom and throw chairs at her.\""
 
-    scene father  # Second image
+    scene father at fit_screen
     with dissolve
     "When she was 12 her father came to visit her. She told him she wanted to go to the U.S. with him."
     "\"I asked him to take me back to the United States because I didn’t have anything left in Honduras and I wanted to start a new life.\""
 
     jump show_soledad_map
 
-
 # Checkpoint 2: Guatemala
 label soledad_cp2:
-    scene bus  # Placeholder image for Checkpoint 2 (replace with actual image)
+    scene bus at fit_screen
     with dissolve
     "They first traveled from Honduras to Guatemala on a bus."
 
-    scene gangsters
+    scene gangsters at fit_screen
     with dissolve
     "\"There were gangsters on board who put a gun to my head, asking for all my money.\""
     "\"I didn’t have any but they didn’t believe me.\""
@@ -79,18 +82,31 @@ label soledad_cp2:
 
 # Checkpoint 3: Mexico Desert
 label soledad_cp3:
-    scene bg_checkpoint_3  # Placeholder image for Checkpoint 3 (replace with actual image)
+    scene van at fit_screen
     with dissolve
-    "This is Checkpoint 3: Soledad's challenging walk through the Mexico desert."
-    menu:
-        "Back to map":
-            jump show_soledad_map
+    "They traveled from Guatemala to Mexico in a van."
+
+    scene xray at fit_screen
+    with dissolve
+    "\"We had to lie down with many people, one on top of the other. The coyotes put cardboard on top of us so la Migra, the authorities, wouldn’t see us if they pulled us over.\""
+    "\"It was hard to breathe.\""
+
+    scene desert20 at fit_screen
+    with dissolve
+    "\"We then walked through the Mexican desert for days. There were around 20 people in our group from all over the world.\""
+    "\"On the second day, I became too weak, so my father paid the coyotes extra for a little pill to give me energy.\""
+
+    scene desert4 at fit_screen
+    with dissolve
+    "\"Some people got lost and didn’t make it.\""
+    
+    jump show_soledad_map
 
 # Checkpoint 4: California
 label soledad_cp4:
-    scene bg_checkpoint_4  # Placeholder image for Checkpoint 4 (replace with actual image)
+    scene hiding at fit_screen
     with dissolve
-    "This is Checkpoint 4: Soledad's arrival in California."
-    menu:
-        "Back to map":
-            jump show_soledad_map
+    "Upon reaching Texas they were put in a van to drive to California."
+    "\"There was a hiding place under the floor where they put us. It was a very long trip and we had to stay quiet the whole time.\""
+    
+    jump show_soledad_map
