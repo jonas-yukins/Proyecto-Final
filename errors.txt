@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 28: is not terminated with a newline. (Check strings and parenthesis.)
-        ortega_journey = [
+File "game/script.rpy", line 105: The text statement is not a valid child of the textbutton statement.
+    text color="#5A189A" hover_color="#9D4EDD"
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Apr 25 14:08:44 2025
+Mon Apr 28 22:43:00 2025
