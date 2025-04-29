@@ -102,6 +102,17 @@ screen ortega_map():
             background "#0008"
             padding (10, 5)
             hover_background "#444c"
+    
+    ## RETURN BUTTON ##
+    textbutton "Regresar":
+        action [Play("sound", "audio/back.mp3"), Jump("start")]
+        xpos 0.98
+        ypos 0.02
+        xanchor 1.0
+        yanchor 0.0
+        background "#FFFFFF"
+        padding (10, 5)
+        hover_background "#F0F0F0"
 
 screen liset_marta_map():
     tag map
@@ -114,6 +125,17 @@ screen liset_marta_map():
             background "#0008"
             padding (10, 5)
             hover_background "#444c"
+        
+    ## RETURN BUTTON ##
+    textbutton "Regresar":
+        action [Play("sound", "audio/back.mp3"), Jump("start")]
+        xpos 0.98
+        ypos 0.02
+        xanchor 1.0
+        yanchor 0.0
+        background "#FFFFFF"
+        padding (10, 5)
+        hover_background "#F0F0F0"
 
 screen soledad_map():
     tag map
@@ -126,6 +148,17 @@ screen soledad_map():
             background "#0008"
             padding (10, 5)
             hover_background "#444c"
+        
+    ## RETURN BUTTON ##
+    textbutton "Regresar":
+        action [Play("sound", "audio/back.mp3"), Jump("start")]
+        xpos 0.98
+        ypos 0.02
+        xanchor 1.0
+        yanchor 0.0
+        background "#FFFFFF"
+        padding (10, 5)
+        hover_background "#F0F0F0"
 
 ################################################################################
 # CHARACTER SELECTION SCREEN
@@ -180,6 +213,7 @@ label start:
 label start_aguilar_ortega:
     scene map at fit_screen
     "Este es el viaje de la familia Aguilar Ortega."
+    "Los puntos están enumerados en orden secuencial para ayudarte a seguir la aventura."
     jump show_ortega_map
 
 label ortega_cp1:
@@ -253,6 +287,7 @@ label ortega_cp5:
 label start_liset_marta:
     scene map at fit_screen
     "Este es el viaje de Liset Barrios y Marta Amaro."
+    "Los puntos están enumerados en orden secuencial para ayudarte a seguir la aventura."
     jump show_liset_marta_map
 
 label liset_cp1:
@@ -359,6 +394,7 @@ label liset_cp8:
 label start_soledad:
     scene map at fit_screen
     "Este es el viaje de Soledad Castillo."
+    "Los puntos están enumerados en orden secuencial para ayudarte a seguir la aventura."
     jump show_soledad_map
 
 label soledad_cp1:
