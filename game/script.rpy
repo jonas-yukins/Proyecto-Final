@@ -96,7 +96,7 @@ screen ortega_map():
     add "map" at fit_screen
     for cp in ortega_journey:
         textbutton cp["name"]:
-            action Jump(cp["label"])
+            action [Play("sound", "audio/click.mp3"), Jump(cp["label"])]
             xpos cp["coords"][0]
             ypos cp["coords"][1]
             background "#0008"
@@ -108,7 +108,7 @@ screen liset_marta_map():
     add "map" at fit_screen
     for cp in liset_marta_journey:
         textbutton cp["name"]:
-            action Jump(cp["label"])
+            action [Play("sound", "audio/click.mp3"), Jump(cp["label"])]
             xpos cp["coords"][0]
             ypos cp["coords"][1]
             background "#0008"
@@ -120,7 +120,7 @@ screen soledad_map():
     add "map" at fit_screen
     for cp in soledad_journey:
         textbutton cp["name"]:
-            action Jump(cp["label"])
+            action [Play("sound", "audio/click.mp3"), Jump(cp["label"])]
             xpos cp["coords"][0]
             ypos cp["coords"][1]
             background "#0008"
@@ -142,11 +142,11 @@ screen character_select():
             spacing 20
             text "Choose a story to begin:" size 40
             textbutton "Soledad Castillo":
-                action Jump("start_soledad")
+                action [Stop("music", fadeout=1.0), Jump("start_soledad")]            
             textbutton "Aguilar Ortega Family":
-                action Jump("start_aguilar_ortega")
+                action [Stop("music", fadeout=1.0), Jump("start_aguilar_ortega")] 
             textbutton "Liset Barrios & Marta Amaro":
-                action Jump("start_liset_marta")
+                action [Stop("music", fadeout=1.0), Jump("start_liset_marta")] 
 
 ################################################################################
 # MAP CALL LABELS
@@ -169,6 +169,7 @@ label show_soledad_map:
 ################################################################################
 
 label start:
+    play music "audio/menu.mp3" fadein 0.5
     call screen character_select
     return
 
@@ -187,6 +188,7 @@ label ortega_cp1:
     "Ambos venezolanos, ambos habían abandonado Venezuela después de la crisis económica que ocurrió bajo el gobierno del presidente Nicolás Maduro."
 
     scene AO_Van at fit_screen with dissolve
+    play sound "audio/car_keys.mp3"
     "Decidieron emprender el viaje a Estados Unidos para tener una vida mejor para ellos y sus hijos."
     "Sra. Ortega tenía una hija de 13 años, pero ella estaba muy enferma y no podía viajar."
     "Después de conocerse en Ecuador, la familia viajó a Perú antes de llegar a Colombia sin dinero ni plan ni lugar para dormir."
@@ -204,10 +206,12 @@ label ortega_cp2:
     "Había cientos de personas tratando de entrar el Tapón."
 
     scene AO_River at fit_screen with dissolve
+    play music "audio/river.mp3"
     "Cuando estaban en su viaje dentro el Tapon del Darien, necesitaban caminar en la selva en un camino muy embarrado. También necesitaban cruzar algunos ríos, con sus cosas encima de sus cabezas."
     "Otras personas gritaban “muerto, muerto” cuando pasaban los cuerpos de migrantes muertos que murieron en el Tapón."
     "Estaban en la selva por seis días, y en los últimos dos días del viaje necesitaban sobrevivir bebiendo solo agua del río."
 
+    stop music
     jump show_ortega_map
 
 label ortega_cp3:
@@ -221,7 +225,9 @@ label ortega_cp3:
     "La familia dormía en una tienda de campaña en la calle."
 
     scene AO_Train at fit_screen with dissolve
+    play music "audio/train.mp3"
     "Para viajar por la frontera de Estados Unidos, la familia abordó un tren de carga y usó ropa y cobijas para asegurarse al tren. Los trenes de mercancías fueron apodados \"la bestia\"."
+    stop music
     jump show_ortega_map
 
 label ortega_cp4:
@@ -261,8 +267,10 @@ label liset_cp1:
     "Las dos mujeres querían una vida mejor."
 
     scene LM_Dancing2 at fit_screen with dissolve
+    play music "audio/cuba.mp3"
     "Liset tenía un novio en Chicago, que se había enamorado de Liset durante un viaje a La Habana."
     "Se ofreció a ayudar a traer a las dos mujeres al norte."
+    stop music
     jump show_liset_marta_map
 
 label liset_cp2:
@@ -277,8 +285,10 @@ label liset_cp3:
     "Tuvieron que viajar en una camioneta durante 18 horas hasta la frontera con Brasil."
     
     scene LM_Canoe at fit_screen with dissolve
+    play music "audio/jungle.mp3"
     "Cruzaron la frontera con Brasil en canoa y luego se dirigieron a Manaos, en plena selva tropical."
     "Allí abordaron un avión hacia el suroeste de Brasil, ahorrando 22 horas de viaje por tierra."
+    stop music
 
     scene LM_Taxi at fit_screen with dissolve
     "Después, alquilaron un taxi hasta la frontera con Bolivia, un remoto rincón que cruzaron camino a Perú."
@@ -292,6 +302,7 @@ label liset_cp4:
 
 label liset_cp5:
     scene LM_Bus at fit_screen with dissolve
+    play sound "audio/truck_honk.mp3"
     "Por la noche, se embarcaron en un autobús a Ecuador, donde Liset habló con los oficiales de immigracion."
     "El primer autobús en Ecuador estaba lleno de haitianos, quienes después del terremoto de 2010 también ganaron el derecho a entrar a los Estados Unidos."
     "También había personas de Bangladesh, que comenzó su viaje a 11,000 millas de distancia."
@@ -303,12 +314,16 @@ label liset_cp6:
     "\"Cada movimiento de los migrantes es bajo las instrucciones de los coyotes, quienes envían fotos del próximo coyote a los migrantes para que sepan a quien deben buscar en la próxima parada.\""
 
     scene LM_Potatoes at fit_screen with dissolve
+    play music "audio/engine.mp3"
     "Liset y Marta se unen a una docena de personas bajo la lona de un camión cargado de papas."
     "Viajan a Medellín, luego a Panamá, luego en motocicletas hasta una lancha, y luego en carreta tirada por caballos hasta el borde del Tapón del Darién."
+    stop music
 
     scene LM_Darien at fit_screen with dissolve
+    play music "audio/jungle.mp3"
     "La caminata fue brutal, por empinadas colinas llamadas \"Adiós, mi Ciudad\" y \"la Colina de la Muerte\"."
     "\"Quería que me tragara la tierra\", dijo Marta, quien se lastimó la pierna el primer día. \"No pensé que lo lograría.\""
+    stop music
 
     scene map at fit_screen with dissolve
     "En Costa Rica, Marta abandona el grupo tras una discusión económica. Llegará a Estados Unidos ella sola, 12 días después que Liset."
@@ -321,8 +336,10 @@ label liset_cp7:
     "La gente bebía agua de los charcos y dormía de pie."
 
     scene LM_Raft at fit_screen with dissolve
+    play music "audio/river.mp3"
     "Cruzó un río hacia Honduras a pie y luego entró a Guatemala por el mismo camino."
     "A México se llega en balsa."
+    stop music
 
     jump show_liset_marta_map
 
@@ -359,6 +376,7 @@ label soledad_cp1:
 
 label soledad_cp2:
     scene SC_bus at fit_screen with dissolve
+    play sound "audio/truck_honk.mp3"
     "Primero, viajaron de Honduras a Guatemala en autobús."
 
     scene SC_gangsters at fit_screen with dissolve
@@ -377,6 +395,7 @@ label soledad_cp3:
     "\"Fue muy difícil respirar.\""
 
     scene SC_desert20 at fit_screen with dissolve
+    play sound "audio/eagle.mp3"
     "\"Nosotros caminamos por el desierto mexicano por muchos días. Había alrededor de 20 personas en nuestro grupo de todas partes del mundo.\""
     "\"Al segundo día, no tuve energía, y mi papá les pagó a los coyotes por una pastilla para darme energía.\""
 
