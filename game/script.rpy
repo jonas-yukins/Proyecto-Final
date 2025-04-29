@@ -63,29 +63,30 @@ transform fit_screen:
 init python:
     ortega_journey = [
         {"name": "1. Colombia", "label": "ortega_cp1", "coords": (850, 700)},
-        {"name": "2. Darien Gap", "label": "ortega_cp2", "coords": (750, 620)},
-        {"name": "3. Mexico City", "label": "ortega_cp3", "coords": (440, 420)},
+        {"name": "2. Tapón del Darién", "label": "ortega_cp2", "coords": (750, 620)},
+        {"name": "3. Ciudad de México", "label": "ortega_cp3", "coords": (440, 420)},
         {"name": "4. Texas", "label": "ortega_cp4", "coords": (400, 300)},
-        {"name": "5. New York City", "label": "ortega_cp5", "coords": (750, 200)},
+        {"name": "5. Nueva York", "label": "ortega_cp5", "coords": (750, 200)},
     ]
 
     liset_marta_journey = [
         {"name": "1. Cuba", "label": "liset_cp1", "coords": (850, 450)},
         {"name": "2. Guyana", "label": "liset_cp2", "coords": (1150, 700)},
-        {"name": "3. Brazil", "label": "liset_cp3", "coords": (1200, 925)},
-        {"name": "4. Peru", "label": "liset_cp4", "coords": (850, 886)},
+        {"name": "3. Brasil", "label": "liset_cp3", "coords": (1200, 925)},
+        {"name": "4. Perú", "label": "liset_cp4", "coords": (850, 886)},
         {"name": "5. Ecuador", "label": "liset_cp5", "coords": (800, 800)},
-        {"name": "6. Darien Gap", "label": "liset_cp6", "coords": (750, 620)},
-        {"name": "7. Mexico", "label": "liset_cp7", "coords": (440, 420)},
+        {"name": "6. Tapón del Darién", "label": "liset_cp6", "coords": (750, 620)},
+        {"name": "7. México", "label": "liset_cp7", "coords": (440, 420)},
         {"name": "8. Chicago", "label": "liset_cp8", "coords": (550, 100)},
     ]
 
     soledad_journey = [
         {"name": "1. Honduras", "label": "soledad_cp1", "coords": (650, 550)},
         {"name": "2. Guatemala", "label": "soledad_cp2", "coords": (600, 500)},
-        {"name": "3. Mexico", "label": "soledad_cp3", "coords": (440, 420)},
+        {"name": "3. México", "label": "soledad_cp3", "coords": (440, 420)},
         {"name": "4. Texas", "label": "soledad_cp4", "coords": (400, 300)},
     ]
+
 
 ################################################################################
 # MAP SCREENS
@@ -140,7 +141,7 @@ screen character_select():
         background "#000a"
         vbox:
             spacing 20
-            text "Choose a story to begin:" size 40
+            text "Elige una historia para comenzar:" size 40
             textbutton "Soledad Castillo":
                 action [Stop("music", fadeout=1.0), Jump("start_soledad")]            
             textbutton "Aguilar Ortega Family":
